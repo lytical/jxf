@@ -10,6 +10,26 @@ import type { jxf_transformer_t } from '../types';
 
 import jxf from '../index.js';
 
+/**
+ * jxf_for_each(match, transform, sort?)
+ * @description
+ * A transformer that iterates over each item in the array resolved by the match expression,
+ * applying the given transform to each item.
+ * @example
+ * import { jxf_for_each, jxf_value_of } from '@lytical/jxf/transformers/index.js';
+ * const data = { names: ['Alice', 'Bob', 'Charlie'] };
+ * const transform = [
+ *   'Names:',
+ *   jxf_for_each('.names', [jxf_value_of('.')]),
+ * ];
+ * const result = jxf(data, transform);
+ * console.log(result.join(' ')); // "Names: Alice Bob Charlie"
+ * @module \@lytical/jxf/transformers/for-each
+ * @param {string} match a jspath expression that resolves to an array
+ * @param {(jxf_transformer_t | string)[]} transform transformers and/or strings to apply to each item in the array
+ * @param {(a: string, b: string) => number} [sort] (optional) a sort function to order the items before transformation
+ * @returns {jxf_transformer_t} A jxf transformer function. 
+ */
 export function jxf_for_each(
   match: string,
   transform: (jxf_transformer_t | string)[],

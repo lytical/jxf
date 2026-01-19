@@ -9,6 +9,25 @@ import apply from 'jspath';
 import type { jxf_transformer_t } from '../types';
 import jxf from '../index.js';
 
+/**
+ * jxf_with(match, transform)
+ * @description
+ * A transformer that changes the context to the value resolved by the match expression and applies the given transform.
+ * @example
+ * import { jxf_with, jxf_value_of } from '@lytical/jxf/transformers/index.js';
+ * const data = { user: { name: 'John Doe', age: 30 } };
+ * const transform = [
+ *   jxf_with('.user', [
+ *     jxf_value_of('.name', (val) => `Name: ${val}`),
+ *     jxf_value_of('.age', (val) => `Age: ${val}`),
+ *   ]),
+ * ];
+ * const result = jxf(data, transform);
+ * console.log(result.join(' ')); // "Name: John Doe Age: 30"
+ * @param match a jspath expression that resolves to a value
+ * @param transform transformers and/or strings to apply with the new context
+ * @returns {jxf_transformer_t} A jxf transformer function.
+ */
 export function jxf_with(
   match: string,
   transform: (jxf_transformer_t | string)[],

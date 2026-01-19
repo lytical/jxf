@@ -1,19 +1,35 @@
 {
-  "name": "@lytical/jsx",
+  "name": "@lytical/jxf",
   "version": "1.0.0",
   "description": "A TypeScript library for transforming template declarations into formatted strings based on provided data.",
   "main": "index.js",
+  "private": false,
   "scripts": {
-    "build": "tsc --build",
+    "build": "tsc --build&&gulp post_build",
     "clean": "rimraf ./dist",
     "rebuild": "npm run clean&&npm run build",
     "test": "mocha --recursive ./dist/**/*.test.js"
   },
-  "keywords": [],
+  "keywords": [
+    "dom",
+    "dsl",
+    "lytical",
+    "node",
+    "template",
+    "template-engine",
+    "transformation",
+    "typescript",
+    "xpath",
+    "xslt"
+  ],
   "author": {
     "email": "barry.hayles@lytical.com",
     "name": "Barry Hayles",
     "url": "https://www.lytical.com"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/lytical/jxf.git"
   },
   "license": "ISC",
   "type": "module",
@@ -28,6 +44,9 @@
     "@types/jspath": "^0.4.2",
     "@types/mocha": "^10.0.10",
     "@types/node": "^25.0.9",
+    "gulp": "^5.0.1",
+    "gulp-uglify-es": "^3.0.0",
+    "pump": "^3.0.3",
     "rimraf": "^6.1.2"
   }
 }

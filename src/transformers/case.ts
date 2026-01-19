@@ -9,6 +9,25 @@ import apply from 'jspath';
 import type { jxf_transformer_t } from '../types';
 import jxf from '../index.js';
 
+/**
+ * jxf_case(match, transform)
+ * @description
+ * A transformer that applies the given transform if the match expression evaluates to true.
+ * @param {string} match a jspath expression that evaluates to a truthy or falsy value
+ * @param {(jxf_transformer_t | string)[]} transform transformers and/or strings to apply if the match is true
+ * @returns {jxf_transformer_t} A jxf transformer function.
+ * @module \@lytical/jxf/transformers/case
+ * @example
+ * import { jxf_case } from '@lytical/jxf/transformers/case.js';
+ * import jxf from '@lytical/jxf/index.js';
+ * 
+ * const data = { age: 25 };
+ * const transform = [
+ *   jxf_case('{.age < 30}', ['Is Young']),
+ *   jxf_case('{.age >= 30}', ['Is Old']),
+ * ];
+ * 
+ */
 export function jxf_case(
   match: string,
   transform: (jxf_transformer_t | string)[],

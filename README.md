@@ -1,7 +1,7 @@
 # @lytical/jxf
 
-JXF (short for JavaScript Tranformation) library provides a similar solution that XSLT provides, for plain old data (POD) JavaScript.\
-Using JSPath for XPATH, declare transformation templates with declarative conditional statements, to transform your objects into any text-based format. 
+JXF (short for JavaScript Tranformation) library provides a similar solution that XSLT provides, for plain old data (POD) JavaScript objects.\
+Using JSPath for XPATH like DSL, declare transformation templates with declarative conditional statements, to transform your objects into a text formatted document. 
 
 This lightweight implementation is extendable to support simple to complex transformation. 
 
