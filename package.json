@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "github",
-    "url": "https://github.com/lytical/jxf.git"
+    "url": "git+https://github.com/lytical/jxf.git"
   },
   "license": "ISC",
   "type": "module",
