@@ -19,6 +19,11 @@ Supports ES6 environments in both DOM and NodeJS.
 
 After installing JXF, import and invoke the `jxf()` function. DSL usage documentation can be found in [JSPath]('https://www.npmjs.com/package/jspath'). 
 
+**Please note:**
+The current version of (@types/jspath@0.4.2) is outdated and does not properly exports the default apply() function.
+Until this is corrected, you must `npm install -D @types/jspath` as a dev dependency to avoid TypeScript compile errors.
+see: https://www.npmjs.com/package/@types/jspath
+
 ## Usage
 
 ```javascript

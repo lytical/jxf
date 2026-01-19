@@ -1,6 +1,6 @@
 {
   "name": "@lytical/jxf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript library for transforming template declarations into formatted strings based on provided data.",
   "main": "index.js",
   "private": false,
@@ -36,8 +36,7 @@
   "dependencies": {
     "chai": "^6.2.2",
     "jspath": "^0.4.0",
-    "mocha": "^11.7.5",
-    "typescript": "^5.9.3"
+    "mocha": "^11.7.5"
   },
   "devDependencies": {
     "@types/chai": "^5.2.3",
@@ -47,6 +46,7 @@
     "gulp": "^5.0.1",
     "gulp-uglify-es": "^3.0.0",
     "pump": "^3.0.3",
-    "rimraf": "^6.1.2"
+    "rimraf": "^6.1.2",
+    "typescript": "^5.9.3"
   }
 }

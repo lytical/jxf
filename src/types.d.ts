@@ -39,6 +39,9 @@ export type jxf_ctx_t = Record<string, any>;
 export type jxf_transformer_t = (data: any, ctx: jxf_ctx_t) => string[];
 
 // the current version of (@types/jspath@0.4.2) is outdated and does not properly exports the default apply() function.
+// once an updated version is available, this module declaration can be removed.
+// for now, you must npm install @types/jspath as a dev dependency to avoid TypeScript errors.
+// see: https://www.npmjs.com/package/@types/jspath
 declare module 'jspath' {
   export default function apply<_t_ = any>(
     path: string,
