@@ -13,6 +13,7 @@ import {
   jxf_case,
   jxf_for_each,
   jxf_if,
+  jxf_length,
   jxf_switch,
   jxf_value_of,
   jxf_variable,
@@ -85,6 +86,79 @@ describe('a jsxform instance', () => {
     expect(rs.join(' ')).equals(
       'Ages: Barry Hayles Is Old and Roger Rabbit Is Young',
     );
+  });
+
+  it('can transform an object to email message.', () => {
+    const data = {
+      customer: {
+        first_name: 'Barry',
+        last_name: 'Hayles',
+        email: 'barry.hayles@lytical.com',
+      },
+      product: [
+        {
+          name: 'CRM',
+          description: 'Our state-of-the-art Customer Relationship Management',
+          price: 39.0,
+          term: 'monthly',
+        },
+        {
+          name: 'CMS',
+          description:
+            'Build web applications and sites with No Coding required',
+          price: 2500.0,
+          term: 'yearly',
+        },
+      ],
+      sales_rep: {
+        name: 'Sally Salesperson',
+        email: 'sally.salesperson@lytical.com',
+      },
+    };
+
+    const transform = [
+      `Hi `,
+      jxf_value_of('.customer.first_name'),
+      `, 
+
+Thank you for your interest in our products. As discussed, the following are the top (`,
+      jxf_length('.product'),
+      `) products you are interested in.
+
+| Name | Description | Cost |
+| --- | --- | ---: |
+`,
+      jxf_for_each('.product', [
+        `| `,
+        jxf_value_of('.name'),
+        ` | `,
+        jxf_value_of('.description'),
+        ` | $`,
+        jxf_value_of('.price'),
+        ` / `,
+        jxf_switch('.term', [
+          jxf_case('.{. === "monthly"}', ['mo']),
+          jxf_case('.{. === "yearly"}', ['yr']),
+        ]),
+        ` |
+`,
+      ]),
+      `
+
+Let me know when you want to move forward... 
+
+Regards, 
+
+`,
+      jxf_value_of('.sales_rep.name'),
+      `\\
+`,
+      jxf_value_of('.sales_rep.email'),
+    ];
+    const rs = jxf(data, transform);
+    expect(rs).exist.and.is.an('array');
+    const message = rs.join('');
+    console.log(message);
   });
 
   it('can transform objects using jxf_for_each and jxf_if()', () => {

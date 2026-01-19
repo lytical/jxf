@@ -5,9 +5,10 @@
 */
 
 export * from './case.js'
-export * from './for-in.js'
-export * from './for-of.js'
+export * from './for-keys.js'
+export * from './for-each.js'
 export * from './if.js'
+export * from './length.js'
 export * from './switch.js'
 export * from './value-of.js'
 export * from './variable.js'
