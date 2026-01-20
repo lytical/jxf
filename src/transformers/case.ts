@@ -7,6 +7,7 @@
 import apply from 'jspath';
 
 import type { jxf_transformer_t } from '../types';
+
 import jxf from '../index.js';
 
 /**
@@ -18,8 +19,8 @@ import jxf from '../index.js';
  * @returns {jxf_transformer_t} A jxf transformer function.
  * @module \@lytical/jxf/transformers/case
  * @example
- * import { jxf_case } from '@lytical/jxf/transformers/case.js';
- * import jxf from '@lytical/jxf/index.js';
+ * import { jxf_case } from '@lytical/jxf';
+ * import jxf from '@lytical/jxf';
  * 
  * const data = { age: 25 };
  * const transform = [

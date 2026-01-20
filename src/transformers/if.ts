@@ -7,6 +7,7 @@
 import apply from 'jspath';
 
 import type { jxf_transformer_t } from '../types';
+
 import jxf from '../index.js';
 
 /**
@@ -14,7 +15,7 @@ import jxf from '../index.js';
  * @description
  * A transformer that conditionally applies the given transform to the data if the match expression evaluates to a truthy value.
  * @example
- * import { jxf_if, jxf_value_of } from '@lytical/jxf/transformers/index.js';
+ * import { jxf_if, jxf_value_of } from '@lytical/jxf';
  * const data = { age: 25 };
  * const transform = [
  *   jxf_if('.age > 18', ['You are an adult.']),

@@ -1,6 +1,6 @@
 {
   "name": "@lytical/jxf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A TypeScript library for transforming template declarations into formatted strings based on provided data.",
   "main": "index.js",
   "private": false,

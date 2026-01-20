@@ -16,7 +16,7 @@ import jxf from '../index.js';
  * A transformer that iterates over each item in the array resolved by the match expression,
  * applying the given transform to each item.
  * @example
- * import { jxf_for_each, jxf_value_of } from '@lytical/jxf/transformers/index.js';
+ * import { jxf_for_each, jxf_value_of } from '@lytical/jxf';
  * const data = { names: ['Alice', 'Bob', 'Charlie'] };
  * const transform = [
  *   'Names:',

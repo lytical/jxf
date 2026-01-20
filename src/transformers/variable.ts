@@ -13,7 +13,7 @@ import type { jxf_transformer_t } from '../types';
  * @description
  * A transformer that defines a variable in the transformation context by evaluating the match expression.
  * @example
- * import { jxf_variable, jxf_value_of } from '@lytical/jxf/transformers/index.js';
+ * import { jxf_variable, jxf_value_of } from '@lytical/jxf';
  * const data = { first_name: 'John', last_name: 'Doe' };
  * const transform = [
  *   jxf_variable('fullName', '.first_name + " " + .last_name'),

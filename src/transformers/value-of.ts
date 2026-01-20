@@ -13,7 +13,7 @@ import type { jxf_transformer_t } from '../types';
  * @description
  * A transformer that extracts the value resolved by the match expression and formats it as a string.
  * @example
- * import { jxf_value_of } from '@lytical/jxf/transformers/index.js';
+ * import { jxf_value_of } from '@lytical/jxf';
  * const data = { name: 'John Doe' };
  * const transform = [
  *   jxf_value_of('.name', (val) => `Name: ${val}`),

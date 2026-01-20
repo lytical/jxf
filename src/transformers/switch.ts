@@ -7,6 +7,7 @@
 import apply from 'jspath';
 
 import type { jxf_transformer_t } from '../types';
+
 import jxf from '../index.js';
 
 /**
@@ -14,7 +15,7 @@ import jxf from '../index.js';
  * @description
  * A transformer that evaluates the match expression and applies the first case transform that matches.
  * @example
- * import { jxf_switch, jxf_case } from '@lytical/jxf/transformers/index.js';
+ * import { jxf_switch, jxf_case } from '@lytical/jxf';
  * const data = { age: 25 };
  * const transform = [
  *   jxf_switch('.age', [

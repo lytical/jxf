@@ -16,7 +16,7 @@ import jxf from '../index.js';
  * A transformer that iterates over each key in the object resolved by the match expression,
  * applying the given transform to each key.
  * @example
- * import { jxf_for_key } from '@lytical/jxf/transformers/index.js';
+ * import { jxf_for_key } from '@lytical/jxf';
  * const data = { age: 25, name: 'Alice' };
  * const transform = [
  *   'Keys:',

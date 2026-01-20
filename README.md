@@ -173,7 +173,7 @@ export function my_custom_xformer(match: string): jxf_transformer_t {
 This library has standard transformers;
 
 ```typescript
-import { ... } from '@lytical/jxf/transformer';
+import { ... } from '@lytical/jxf';
 ```
 
 ### Transformers

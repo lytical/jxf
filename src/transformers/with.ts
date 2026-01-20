@@ -7,6 +7,7 @@
 import apply from 'jspath';
 
 import type { jxf_transformer_t } from '../types';
+
 import jxf from '../index.js';
 
 /**
@@ -14,7 +15,7 @@ import jxf from '../index.js';
  * @description
  * A transformer that changes the context to the value resolved by the match expression and applies the given transform.
  * @example
- * import { jxf_with, jxf_value_of } from '@lytical/jxf/transformers/index.js';
+ * import { jxf_with, jxf_value_of } from '@lytical/jxf';
  * const data = { user: { name: 'John Doe', age: 30 } };
  * const transform = [
  *   jxf_with('.user', [
