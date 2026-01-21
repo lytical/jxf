@@ -1,14 +1,15 @@
 {
   "name": "@lytical/jxf",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A TypeScript library for transforming template declarations into formatted strings based on provided data.",
   "main": "index.js",
   "private": false,
   "scripts": {
-    "build": "tsc --build&&gulp post_build",
+    "build": "tsc --build",
+    "publish": "npm run clean&&npm run build&&gulp post_build&&cd ./dist&&npm publish",
     "clean": "rimraf ./dist",
-    "rebuild": "npm run clean&&npm run build",
-    "test": "mocha --recursive ./dist/**/*.test.js"
+    "rebuild": "npm run clean&&npm install&&npm run build",
+    "test": "npm run clean&&npm run build&&mocha --recursive ./dist/**/*.test.js"
   },
   "keywords": [
     "dom",
@@ -34,17 +35,18 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "chai": "^6.2.2",
-    "jspath": "^0.4.0",
-    "mocha": "^11.7.5"
+    "jspath": "^0.4.0"
   },
   "devDependencies": {
     "@types/chai": "^5.2.3",
     "@types/jspath": "^0.4.2",
     "@types/mocha": "^10.0.10",
     "@types/node": "^25.0.9",
+    "chai": "^6.2.2",
     "gulp": "^5.0.1",
+    "gulp-clean": "^0.4.0",
     "gulp-uglify-es": "^3.0.0",
+    "mocha": "^11.7.5",
     "pump": "^3.0.3",
     "rimraf": "^6.1.2",
     "typescript": "^5.9.3"
